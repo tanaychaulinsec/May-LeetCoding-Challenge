@@ -20,16 +20,11 @@ from collections import Counter
 import heapq
 class Solution:
     def frequencySort(self, s: str) -> str:
-        """
-        :type s: str
-        :rtype: str
-        """
         counterMap=Counter(s)
         heap=[]
         res=""
         for char,freq in counterMap.items():
             heapq.heappush(heap,(-freq,char))
-            
         while heap:
             freq,char=heapq.heappop(heap)
             res+=char * -freq
@@ -41,7 +36,6 @@ from collections import Counter
 class Solution:
     def frequencySort(self, s: str) -> str:
         counterMap=Counter(s)
-        heap=[]
         res=""
         for char ,freq in counterMap.most_common():
             res+=char * freq
